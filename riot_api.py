@@ -24,6 +24,7 @@ class RiotAPI():
     def set_region(self, region):
         self.region = region
 
+    #championmastery (no version listed)
     def get_championmastery_playerid_championid(self, player_id, champion_id):
         url = self.base_url + '/championmastery/location/' + region_dict[self.region] + "/player/" + \
             str(player_id) + "/champion/" + str(champion_id) + self.api_key_question
@@ -42,10 +43,16 @@ class RiotAPI():
         f =  urllib2.urlopen(url)
         return f.read()
 
-
     def get_championmastery_playerid_topcount(self, player_id, count):
         url = self.base_url + '/championmastery/location/' + region_dict[self.region] + "/player/" + \
             str(player_id) + "/topchampions?count=" + str(count) + self.api_key_amp
+        f =  urllib2.urlopen(url)
+        return f.read()
+
+    #summoner-v1.4
+    def get_playerid_from_playername(self, player_names):
+        url = self.base_url + "/api/lol/" + self.region + "/v1.4/summoner/by-name/" + \
+            player_names + self.api_key_question
         f =  urllib2.urlopen(url)
         return f.read()
 
