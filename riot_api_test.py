@@ -1,4 +1,3 @@
-import yaml
 from riot_api import RiotAPI
 
 f = open("./api_key", "r")
