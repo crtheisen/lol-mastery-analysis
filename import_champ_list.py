@@ -9,6 +9,10 @@ f = open("./api_key", "r")
 api = RiotAPI(f.read())
 f.close()
 
+graph_numbers = 0
 result = api.get_champion_list()
+f = open("./data/champion_list_api.csv","w")
+print result
 for i in result["data"]:
-  print str(result["data"][i]["id"]) + "," + str(result["data"][i]["name"])
+  f.write(str(result["data"][i]["name"]) + "," + str(graph_numbers) + "," + str(result["data"][i]["id"]) + "\n")
+  graph_numbers = graph_numbers + 1
