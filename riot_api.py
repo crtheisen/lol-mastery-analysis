@@ -56,6 +56,19 @@ class RiotAPI():
         f =  urllib2.urlopen(url)
         return json.loads(f.read())
 
+    #league-v2.5
+    def get_challenger_league_playerlist(self):
+        url = self.base_url + "/api/lol/" + self.region + "/v2.5/league/challenger/?type=RANKED_SOLO_5x5" + \
+            self.api_key_amp
+        f =  urllib2.urlopen(url)
+        return json.loads(f.read())
+
+    def get_master_league_playerlist(self):
+        url = self.base_url + "/api/lol/" + self.region + "/v2.5/league/master/?type=RANKED_SOLO_5x5" + \
+            self.api_key_amp
+        f =  urllib2.urlopen(url)
+        return json.loads(f.read())
+
     #summoner-v1.4
     def get_playerid_from_playername(self, player_names):
         url = self.base_url + "/api/lol/" + self.region + "/v1.4/summoner/by-name/" + \
