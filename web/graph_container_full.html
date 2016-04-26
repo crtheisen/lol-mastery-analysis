@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <title>Champion Affinity | Force layout with images</title>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <style>
       @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-      body {font-family: "Open Sans", Consolas, monaco, monospace; line-height: 160%; font-size: 16px;  margin: 0; }
+      body {background-color:#fff8dc; font-family: "Open Sans", Consolas, monaco, monospace; line-height: 160%; font-size: 16px;  margin: 0; }
       path.link {
         fill: none;
         stroke-width: 2px;
@@ -27,7 +28,7 @@
 
 <body>
     <header>
-      <h1>Champion Masteries</h1>
+      <h1>Champion Affinity</h1>
     </header>
     <!-- container for force layout visualisation  -->
     <section id="vis"></section> 
@@ -37,9 +38,9 @@
 var tcBlack = "#130C0E";
 
 // rest of vars
-var w = 960,
+var w = 1000,
     h = 700,
-    maxNodeSize = 50,
+    maxNodeSize = 36,
     x_browser = 20,
     y_browser = 25,
     root;
@@ -51,13 +52,13 @@ var color = d3.scale.category10();
 
 vis = d3.select("#vis").append("svg").attr("width", w).attr("height", h);
  
-d3.json("data/champ_nodes_ex.json", function(error, json) {
+d3.json("data/champion_edge_force_graph.json", function(error, json) {
   if (error) alert(error);
  
   root = json;
-  root.fixed = true;
-  root.x = w / 2;
-  root.y = h / 4;
+  root.fixed = false;
+  root.x = w / 4;
+  root.y = h / 2;
  
  
   // Build the path
@@ -82,11 +83,11 @@ function update() {
   // Restart the force layout.
   force.nodes(nodes)
         .links(links)
-        .gravity(0.05)
-    .charge(-2000)
-    .linkDistance(75)
+        .gravity(.5)
+    .charge(-3000)
+    .linkDistance(40)
     .friction(.4)
-    .linkStrength(function(l, i) {return 1; })
+    .linkStrength(function(l, i) {return 1.5; })
     .size([w, h])
     .on("tick", tick)
         .start();
@@ -117,25 +118,25 @@ function update() {
  
   // Append nodes
   nodeEnter.append("svg:rect")
-      .attr("x", -23)
-      .attr("y", -23)
-      .attr("height", 46)
-      .attr("width", 46)
-      .style("fill", function(d) { return color(d.group); });
+      .attr("x", -21)
+      .attr("y", -21)
+      .attr("height", 42)
+      .attr("width", 42)
+      .style("fill", function(d) { return (d.group == 1) ? "#4682b4" : "#d62728"; });
    
   // Append images
   var images = nodeEnter.append("svg:image")
         .attr("xlink:href",  function(d) { return d.img;})
-        .attr("x", function(d) { return -20;})
-        .attr("y", function(d) { return -20;})
-        .attr("height", 40)
-        .attr("width", 40);
+        .attr("x", function(d) { return -18;})
+        .attr("y", function(d) { return -18;})
+        .attr("height", 36)
+        .attr("width", 36);
   
   // make the image grow a little on mouse over and add the text details on click
   var setEvents = images
           // Append hero text
           .on( 'click', function (d) {
-              d3.select("h1").html ("Mobafire for: " + "<a href='" + d.link + "' >"  + d.name + " ⇢"+ "</a>" );  
+              d3.select("h1").html ("Mobafire for: " + "<a target=\"_blank\" href=" + d.link + ">"  + d.name + "</a>" );  
            })
 
           .on( 'dblclick', function (d) {
@@ -146,28 +147,28 @@ function update() {
             // select element in current context
             d3.select( this )
               .transition()
-              .attr("x", function(d) { return -40;})
-              .attr("y", function(d) { return -40;})
-              .attr("height", 80)
-              .attr("width", 80);
+              .attr("x", function(d) { return -30;})
+              .attr("y", function(d) { return -30;})
+              .attr("height", 60)
+              .attr("width", 60);
           })
           // set back
           .on( 'mouseleave', function() {
             d3.select( this )
               .transition()
-              .attr("x", function(d) { return -20;})
-              .attr("y", function(d) { return -20;})
-              .attr("height", 40)
-              .attr("width", 40);
+              .attr("x", function(d) { return -18;})
+              .attr("y", function(d) { return -18;})
+              .attr("height", 36)
+              .attr("width", 36);
           });
 
   // Append hero name on roll over next to the node as well
-  nodeEnter.append("text")
-      .attr("class", "nodetext")
-      .attr("x", x_browser -60)
-      .attr("y", y_browser +30)
-      .attr("fill", tcBlack)
-      .text(function(d) { return d.name; });
+  // nodeEnter.append("text")
+  //     .attr("class", "nodetext")
+  //     .attr("x", x_browser -60)
+  //     .attr("y", y_browser +30)
+  //     .attr("fill", tcBlack)
+  //     .text(function(d) { return d.name; });
  
  
   // Exit any old nodes.
