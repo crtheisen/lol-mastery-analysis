@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <style type="text/css">
-     body { background: #fff8dc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+     body { background: #f7d881 !important; color:#083030 !important; }
   </style>
   <head>
     <meta charset="utf-8">
@@ -63,17 +63,26 @@
     <div class="container">
 
       <div class="starter-template">
-        <h4>Note:</h4>
-          <p>Because of sandboxing issues with the frame containing this graph, forcing the links on the graph to open in a new frame with "target" doesn't work. Left clicking links is disabled to prevent the site from loading in the frame (and forcing you to reload the page). You can open the links in a new tab with Right Click -> Open in New Tab/Window. Sorry for the inconvenience!</p>
 
-        <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="graph_container_full.html"marginwidth="0" marginheight="0" style="height:700px; width:1000px"frameBorder="0" scrolling="no"></iframe>
+        <h3 class="text-justify">Force Graph (Top Affinity)</h3>
+      <p class="text-justify">The links on on this graph represent the top affinity relationship for each champion; each champion was allocated one link. Left clicking a champion will bring up a link to their Mobafire page. Try dragging around the nodes in the chart to understand how they "move" together! Champions highlighted in red have been identified as part of the "meta" cluster: for more information on how the meta was determined, see the <a href="about.html">about</a> page.</br></p>
 
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h4 class="text-justify">Insights</h4>
+        <ul><li class="text-justify">Lucian/Ezreal, Lee Sin, and Thresh are the "focal points" of the meta.</li>
+        <li class="text-justify">We see some interesting clustering behavior on this graph:
+        <ul><li class="text-justify">Lucian/Ezreal have a lot of ADC/AP champions with some easy to play champs from the bruiser/tank/melee carry category.</li>
+        <li class="text-justify">Lee Sin has a lot of the bruiser/tank/melee carry champions with some easy to play champs from the AP/ADC category.</li>
+        <li class="text-justify">The Thresh cluster might be the most interesting; everyone in his sub-graph has been mostly played as support since the mastery system was released.</li>
+      </ul></li>
+        <li class="text-justify">Our meta clustering does a pretty good job, by our intuition, of identifying the important champions in LoL since the release of the mastery system. Champions reworked or released since the mastery update were unfairly penalized, however (Poppy being a notable example)</li><br>
+
+          <p class="text-justify"><small>Because of sandboxing issues with the frame containing this graph, forcing the links on the graph to open in a new frame with "target" doesn't work. Left clicking links is disabled to prevent the site from loading in the frame (and forcing you to reload the page). You can open the links in a new tab with Right Click -> Open in New Tab/Window. Sorry for the inconvenience!</small></p>
+
+        <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="graph_container_full.html"marginwidth="0" marginheight="0" style="height:850px; width:1000px"frameBorder="1" scrolling="no"></iframe>
       </div>
 
       <footer class="footer">
-        <p><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
+        <p class="text-justify"><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
       </footer>
 
     </div><!-- /.container -->

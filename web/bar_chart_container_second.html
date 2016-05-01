@@ -18,7 +18,7 @@ body {
 }
 
 .bar:hover {
-  fill: #d62728 ;
+  fill: #8d1408 ;
 }
 
 .x.axis path {
@@ -83,7 +83,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Centrality:</strong> <span style='color:red'>" + d.frequency + "</span>";
+    return "<strong>Centrality:</strong> <span style='color:white'>" + d.frequency + "</span>";
   })
 
 var svg = d3.select("body").append("svg")

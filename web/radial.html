@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <style type="text/css">
-     body { background: #fff8dc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+     body { background: #f7d881 !important; color:#083030 !important; }
   </style>
   <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Champion Affinity</title>
 
@@ -63,15 +63,25 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>RADIAL CHART</h1>
+
+      <h3 class="text-justify">Radial Chart</h3>
+      <p class="text-justify">Another way of exploring champion affinity; any affinity above 15% between champions is represented on this chart. If a champion didn't have any affinities over 15%, we chose the top affinity for that champion (so nobody was left out). You can mouseover a champion's label to have that champion's links "pop" from the graph.</br></br>
+      Radial charts are a great example of <a href="http://www.theatlantic.com/entertainment/archive/2015/05/the-rise-of-the-data-artist/392399/">data as art</a>. Data visualizations like this give us the warm fuzzies we imagine artists get. :)</p>
+
+      <h4 class="text-justify">Insights</h4>
+      <p class="text-justify">
+        <ul><li class="text-justify">The "thicker" a specific champion's initial set of edges are, the more interconnected they are (this gives some hints towards the results of the centrality metric).</li>
+        <li class="text-justify">It's clear from the chart how top-heavy the meta is. A good chunk of champions only have a single link.</li></ul></p>
+
+      <h4 class="text-justify">Why is Mundo on his own?</h4>
+      <p class="text-justify">
+        <ul><li class="text-justify">Mundo is the best and coolest champion in League.</li>
+        <li class="text-justify"><a href="./memes/grass.gif">MUNDO</a> <a href="./memes/mordor.jpg">GOES</a> WHERE HE PLEASES</li></ul></p>
+
         <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="edge_clustering_champions.html"marginwidth="0" marginheight="0" style="height:900px; width:900px"frameBorder="0" scrolling="no"></iframe>
 
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
-
       <footer class="footer">
-        <p><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
+        <p class"text-justify"><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
       </footer>
 
     </div><!-- /.container -->

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <style type="text/css">
-     body { background: #fff8dc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+    body { background: #f7d881 !important; color:#083030 !important; }
   </style>
   <head>
     <meta charset="utf-8">
@@ -64,12 +64,26 @@
 
       <div class="starter-template">
 
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <p class="text-justify">For <a href="https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1">Riot's API Challenge (2016)</a>, we decided to explore how the mastery data provided by the Riot API can model the <b>relationships</b> between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion.<br></p>
+    <p class="text-justify">We've built multiple visualizations using some or all of our metrics. The purpose of multiple visualizations is to show how much the visualization matters when presenting data; depending on how you display data, you could learn completely different things! On each page, we'll also talk about some of our initial insights based on each visualization.</br></p>
+    <p class="text-justify">We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated on the <a href="about.html">About</a> page.</br></p>
+
+  <h3 class="text-justify">Champion Affinity</h3>
+    <p class="text-justify">Affinity (the namesake of our app) is the likelihood that having <b>mastered</b> <i>(reached level 5 with)</i> a champion predicts that you will have also played a different champion. As an example, if Garen has a 50% affinity with Annie but a 80% affinity with Lucian, that means that more Garen masters play Lucian than play Annie. If you like Garen, you should consider playing Lucian! </br></p>
+    <p class="text-justify">Affinity is displayed throughout the site: Our <a href="heatmap.html">heatmap</a> shows every affinity in the game. The <a href="graph.html">force graph</a> shows the top affinity for every champion. The <a href="radial.html">radial chart</a> is a representation of all affinities over a certain value.</br></p>
+
+  <h3 class="text-justify">Champion Centrality</h3>
+    <p class="text-justify">Centrality is another way to think about champion popularity; how often does a specific champion show up strongly in summoners' champion affinity arrays? If Lucian has higher affinity in sum across all champions than Annie, then we say that Lucian has higher champion centrality, and may be more important to the metagame for this data sample. </br></p>
+    <p class="text-justify">A sorted set of centrality for all champions is on the <a href="charts.html">centrality</a> page.</br></p>
+
+  <h3 class="text-justify">Champion Clustering</h3>
+    <p class="text-justify">We wanted to see if we could predict, based on champion mastery data, which champions are part of the "meta" at the Challenger/Master level. To do this, we used Markov Clustering (a Machine Learning technique) to identify the champions that were the most interconnected in our dataset.</br></p>
+    <p class="text-justify">Our meta clustering of champions can be seen on our <a href="graph.html">force graph</a>.</br></p>
+
       </div>
 
       <footer class="footer">
-        <p><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
+        <p class="text-justify"><i>Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.</i></p>
       </footer>
 
     </div><!-- /.container -->

@@ -182,7 +182,7 @@ function(error, data) {
         .attr("class", function(d){return "cell cell-border cr"+(d.row-1)+" cc"+(d.col-1);})
         .attr("width", cellSize)
         .attr("height", cellSize)
-        .style("fill", function(d) { return colorScale(d.value); })
+        .style("fill", function(d) { return colorScale((d.value+5)/10); })
         /* .on("click", function(d) {
                var rowtext=d3.select(".r"+(d.row-1));
                if(rowtext.classed("text-selected")==false){
@@ -202,7 +202,7 @@ function(error, data) {
                  .style("left", (d3.event.pageX+10) + "px")
                  .style("top", (d3.event.pageY-10) + "px")
                  .select("#value")
-                 .text(rowLabel[d.row-1]+" -> "+colLabel[d.col-1]+"\n affinity: "+d.value);  
+                 .text(rowLabel[d.row-1]+" -> "+colLabel[d.col-1]+"\n affinity: "+d.value + "%");  
                //Show the tooltip
                d3.select("#tooltip").classed("hidden", false);
         })
@@ -215,7 +215,7 @@ function(error, data) {
         ;
 
   var legend = svg.selectAll(".legend")
-      .data([0,1,2,3,4,5,6,7,8,9,10])
+      .data([0,10,20,30,40,50,60,70,80,90,100])
       .enter().append("g")
       .attr("class", "legend");
  

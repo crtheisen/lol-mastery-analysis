@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <style type="text/css">
-     body { background: #fff8dc !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+     body { background: #f7d881 !important; color:#083030 !important; }
   </style>
   <head>
     <meta charset="utf-8">
@@ -63,13 +63,16 @@
     <div class="container">
 
       <div class="starter-template">
-        <h4>Note:</h4>
-          <p>Because of sandboxing issues with the frame containing this graph, forcing the links on the graph to open in a new frame with "target" doesn't work. Left clicking links is disabled to prevent the site from loading in the frame (and forcing you to reload the page). You can open the links in a new tab with Right Click -> Open in New Tab/Window. Sorry for the inconvenience!</p>
 
+        <h3 class="text-justify">Centrality Bar Charts</h3>
+      <p class="text-justify">These two bar charts show the centrality of all 130 champions. Centrality is the sum of all of the affinity values for that champion to every other champion. The higher the value, the more likely that champions is closely related to an arbitrary champion.</br></p>
+        <h4 class="text-justify">Insights</h4>
+      <p class="text-justify">
+        <ul><li class="text-justify">Lucian, Lee Sin, and Ezreal score well here again.</li>
+        <li class="text-justify">There's exponential decay at the top of the chart. Strong dropoff for the first 10 champions or so, then a more linear decrease.</li>
+        <li class="text-justify">We see another exponential curve (in reverse) at the end of the chart. Interestingly, a lot of the champions at the bottom of the chart have been talked about in terms of reworks...</li>
+        <li class="text-justify"><a href="http://www.enotes.com/shakespeare-quotes/alas-poor-yorick-knew-him-horatio">Alas, poor Yorick.</a></li></ul></p>
         <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="bar_chart_container.html"marginwidth="0" marginheight="0" style="height:500px; width:960px"frameBorder="0" scrolling="no"></iframe>
-
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
 
         <iframe sandbox="allow-scripts allow-forms allow-same-origin" src="bar_chart_container_second.html"marginwidth="0" marginheight="0" style="height:500px; width:960px"frameBorder="0" scrolling="no"></iframe>
 

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <title>Champion Affinity | Force layout with images</title>
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <style>
       @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-      body {background-color:#fff8dc; font-family: "Open Sans", Consolas, monaco, monospace; line-height: 160%; font-size: 16px;  margin: 0; }
+      body {background-color:#f7d881; color: #083030; font-family: "Open Sans", Consolas, monaco, monospace; line-height: 160%; font-size: 16px;  margin: 0; }
       path.link {
         fill: none;
         stroke-width: 2px;
@@ -16,7 +15,7 @@
       .node:not(:hover) .nodetext {
         display: none;
       }
-      h1 { font-size: 18px; margin: 5px 0 ; font-weight: normal;}
+      h1 { font-size: 18px; margin: 5px 0 ; font-weight: normal; background-color: #f7d881;}
       header {padding: 20px; position: absolute; top: 0; left: 0;}
       a:link { color: #EE3124; text-decoration: none;}
       a:visited { color: #EE3124; }
@@ -28,7 +27,7 @@
 
 <body>
     <header>
-      <h1>Champion Affinity</h1>
+      <h1></h1>
     </header>
     <!-- container for force layout visualisation  -->
     <section id="vis"></section> 
@@ -39,7 +38,7 @@ var tcBlack = "#130C0E";
 
 // rest of vars
 var w = 1000,
-    h = 700,
+    h = 850,
     maxNodeSize = 36,
     x_browser = 20,
     y_browser = 25,
@@ -136,7 +135,7 @@ function update() {
   var setEvents = images
           // Append hero text
           .on( 'click', function (d) {
-              d3.select("h1").html ("Mobafire for: " + "<a target=\"_blank\" href=" + d.link + ">"  + d.name + "</a>" );  
+              d3.select("h1").html ("&nbsp;Mobafire for: " + "<a target=\"_blank\" href=" + d.link + ">"  + d.name + "</a>&nbsp" );  
            })
 
           .on( 'dblclick', function (d) {
@@ -217,7 +216,6 @@ function click(d) {
 }
 
 function dblclick(d, nodes, links) {
-  d3.select("h1").html ("Doubleclicked"); 
   update();
 }
   
