@@ -6,4 +6,10 @@ We've built multiple visualizations using some or all of our metrics. The purpos
 
 In this README, we'll go through the design decisions for each part of the application; the design of the site, the visualizations, and the backend processing.
 
+Champion Affinity was designed and created by [Chris](http://theisencr.github.io/) ([Ellipson (NA)](http://na.op.gg/summoner/userName=Ellipson)) and Rob ([T3lrec (NA)](http://na.op.gg/summoner/userName=t3lrec))
+
+Chris designed the metrics, did the development work, and wrote most of the words you're reading here and on the site itself.
+
+Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, and provided proofreading and feedback on the final application. 
+
 ##Site Design
