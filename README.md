@@ -4,12 +4,16 @@ For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/ann
 
 We've built multiple visualizations using some or all of our metrics. The purpose of multiple visualizations is to show how much the visualization matters when presenting data; depending on how you display data, you could learn completely different things! On each page, we'll also talk about some of our initial insights based on each visualization.
 
-In this README, we'll go through the design decisions for each part of the application; the design of the site, the visualizations, and the backend processing.
+In this README, we'll go through the design decisions for each part of the application; the backend generation and processing of the metrics, the visualizations, and the design of the site.
 
 Champion Affinity was designed and created by [Chris](http://theisencr.github.io/) ([Ellipson (NA)](http://na.op.gg/summoner/userName=Ellipson)) and Rob ([T3lrec (NA)](http://na.op.gg/summoner/userName=t3lrec))
 
 Chris designed the metrics, did the development work, and wrote most of the words you're reading here and on the site itself.
 
 Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, and provided proofreading and feedback on the final application. 
+
+##Backend (Data Collection and Metric Calculations)
+
+##Visualizations
 
 ##Site Design
