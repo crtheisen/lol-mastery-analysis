@@ -10,7 +10,7 @@ Champion Affinity was designed and created by [Chris](http://theisencr.github.io
 
 Chris designed the metrics, did the development work, and wrote most of the words you're reading here and on the site itself.
 
-Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, and provided proofreading and feedback on the final application. 
+Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, wrote text content, and provided proofreading and feedback on the final application. 
 
 ##Backend (Data Collection and Metric Calculations)
 
