@@ -12,6 +12,7 @@ f.close()
 graph_numbers = 0
 result = api.get_champion_list()
 f = open("./data/champion_list_api.csv","w")
+f.write("Name,Riot_ID\n")
 for i in result["data"]:
-  f.write(str(result["data"][i]["name"]) + "," + str(graph_numbers) + "," + str(result["data"][i]["id"]) + "\n")
+  f.write(str(result["data"][i]["name"]) + "," + str(result["data"][i]["id"]) + "\n")
   graph_numbers = graph_numbers + 1

@@ -9,7 +9,7 @@ f = open("./api_key", "r")
 api = RiotAPI(f.read())
 f.close()
 
-f = open("./data/player_list_master_challenger.csv", "w")
+f = open("./data/player_id_list.csv", "w")
 
 result = api.get_challenger_league_playerlist()
 for i in result["entries"]:

@@ -28,13 +28,22 @@ f.close()
 #   for y in range(0, 130):
 #     affinity_dict[str(x)][str(y)] = 0
 
-f = open("./data/player_ids.csv","rU")
+f = open("./data/player_id_list.csv","rU")
 
-w = open("./data/list_masteries_4.csv", "w")
+w = open("./data/list_of_masteries.csv", "w")
 
 w.write("graph_num,")
 for x in range(0, 130):
   w.write(str(x) + ",")
+w.write("\n")
+
+w.write("0,")
+notFirst = False
+for x in range(0, 130):
+  if (notFirst):
+    w.write(",")
+  w.write("0")
+  notFirst = True
 w.write("\n")
 
 num_parsed = 0
@@ -51,12 +60,17 @@ for line in f:
     player_dict[mapping_dict[str(int(i["championId"]))]] = str(i["championLevel"])
 
   w.write(line.rstrip() + ",")
+  notFirst = False
   for x in range(0, 130):
+    if (notFirst):
+      w.write(",")
     try:
-      w.write(str(player_dict[str(x)]) + ",")
+      w.write(str(player_dict[str(x)]))
     except KeyError:
-      w.write(str(0) + ",")
+      w.write(str(0))
+    notFirst = True
   w.write("\n")
-  time.sleep(1)
+  #respect the upper end of the rate limit on personal API keys...
+  time.sleep(1.5)
   num_parsed += 1
   print("Number Parsed: " + str(num_parsed))

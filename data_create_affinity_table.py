@@ -1,7 +1,7 @@
 import sys
 sys.dont_write_bytecode = True
 
-r = open("./data/list_masteries_04252016_master_challenger.csv","rU")
+r = open("./data/list_of_masteries.csv","rU")
 
 f = open("./data/affinity_table_normalized.csv","w")
 
@@ -30,9 +30,14 @@ for line in r:
 
 for x in range(0, 130):
   expert_table[x] = []
+  expert_count = 0
   for player in mastery_table:
     if int(mastery_table[player][x]) == 5:
       expert_table[x].append(player)
+      expert_count += 1
+
+  if expert_count == 0:
+    expert_table[x].append("0")
 
 for expert_list in expert_table:
   final_list = [0]*130
