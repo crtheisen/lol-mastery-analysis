@@ -25,7 +25,7 @@ for i in f:
 
 f.close()
 
-f = open("./static/mobafire-icon-lookup.csv","rU")
+f = open("./static_data/mobafire-icon-lookup.csv","rU")
 
 final = open("./data/champion_list.csv","w")
 
