@@ -25,11 +25,11 @@ for i in f:
 
 f.close()
 
-f = open("./data/static_mobafire-icon-lookup.csv","rU")
+f = open("./static/mobafire-icon-lookup.csv","rU")
 
 final = open("./data/champion_list.csv","w")
 
-final.write("Name,Riot_ID,Graph_ID,Mobafire_Name,Mobafire_ID,Image_ID,Cluster (MCL) (-I 3.4 -e 2)\n")
+final.write("Name,Riot_ID,Graph_ID,Mobafire_Name,Mobafire_ID,Image_ID,Cluster (MCL) (-i 3.4 -e 2)\n")
 labelRow = False
 for i in f:
   i = i.split(",")
