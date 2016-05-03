@@ -12,7 +12,7 @@ f.close()
 choice = 1
 
 while(choice > 0 and choice < 3):
-  choice = input("Enter which API to test: ")
+  choice = int(input("Enter which API to test: "))
 
   if(choice == 1): #championmastery
     tests = cm.TestRiotChampionMastery(api)

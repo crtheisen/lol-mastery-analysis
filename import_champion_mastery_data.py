@@ -59,4 +59,4 @@ for line in f:
   w.write("\n")
   time.sleep(1)
   num_parsed += 1
-  print "Number Parsed: " + str(num_parsed)
+  print("Number Parsed: " + str(num_parsed))

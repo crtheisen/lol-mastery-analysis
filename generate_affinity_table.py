@@ -28,7 +28,7 @@ for line in r:
     headers = True
 
 
-for x in xrange(0, 130):
+for x in range(0, 130):
   expert_table[x] = []
   for player in mastery_table:
     if int(mastery_table[player][x]) == 5:
@@ -48,22 +48,22 @@ for expert_list in expert_table:
 for row in affinity_table:
   affinity_table[row][row] = 0
 
-for x in xrange(0, 130):
-  for y in xrange(x, 130):
+for x in range(0, 130):
+  for y in range(x, 130):
     affinity_table[x][y] += affinity_table[y][x]
     affinity_table[y][x] = affinity_table[x][y]
 
 max_val = 0
-for x in xrange(0, 130):
-  for y in xrange(x, 130):
+for x in range(0, 130):
+  for y in range(x, 130):
     if affinity_table[x][y] > max_val:
       max_val = affinity_table[x][y]
 
 max_val = float(max_val)
-print max_val
+print(max_val)
 
-for x in xrange(0, 130):
-  for y in xrange(x, 130):
+for x in range(0, 130):
+  for y in range(x, 130):
     affinity_table[x][y] = float(affinity_table[x][y]/max_val)
     if affinity_table[x][y] > 1:
       affinity_table[x][y] = 1

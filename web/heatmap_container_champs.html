@@ -124,7 +124,7 @@ function(d) {
   return {
     row:   +d.row_idx,
     col:   +d.col_idx,
-    value: +d.log2ratio
+    value: +d.affinity
   };
 },
 function(error, data) {
@@ -237,23 +237,23 @@ function(error, data) {
 
   function sortbylabel(rORc,i,sortOrder){
        var t = svg.transition().duration(0);
-       var log2r=[];
+       var affin=[];
        var sorted; // sorted is zero-based index
        d3.selectAll(".c"+rORc+i) 
          .filter(function(ce){
-            log2r.push(ce.value);
+            affin.push(ce.value);
           })
        ;
-       if(rORc=="r"){ // sort log2ratio of a gene
-         sorted=d3.range(col_number).sort(function(a,b){ if(sortOrder){ return log2r[b]-log2r[a];}else{ return log2r[a]-log2r[b];}});
+       if(rORc=="r"){ // sort affinity of a champion
+         sorted=d3.range(col_number).sort(function(a,b){ if(sortOrder){ return affin[b]-affin[a];}else{ return affin[a]-affin[b];}});
          t.selectAll(".cell")
            .attr("x", function(d) { return sorted.indexOf(d.col-1) * cellSize; })
            ;
          t.selectAll(".colLabel")
           .attr("y", function (d, i) { return sorted.indexOf(i) * cellSize; })
          ;
-       }else{ // sort log2ratio of a contrast
-         sorted=d3.range(row_number).sort(function(a,b){if(sortOrder){ return log2r[b]-log2r[a];}else{ return log2r[a]-log2r[b];}});
+       }else{ // sort affinity of a champion
+         sorted=d3.range(row_number).sort(function(a,b){if(sortOrder){ return affin[b]-affin[a];}else{ return affin[a]-affin[b];}});
          t.selectAll(".cell")
            .attr("y", function(d) { return sorted.indexOf(d.row-1) * cellSize; })
            ;
