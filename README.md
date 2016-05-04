@@ -28,19 +28,19 @@ Easy! We have a live version of the app up at [http://champion-affinity.getforge
 
 Dependency: Python 3.X
 
--Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
--Navigate to the <code>web</code> directory on a command line.
--Run the following command: <code>python -m http.server 8000</code>
--Navigate to <code>localhost:8000</code> on your web browser of choice.
+- Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
+- Navigate to the <code>web</code> directory on a command line.
+- Run the following command: <code>python -m http.server 8000</code>
+- Navigate to <code>localhost:8000</code> on your web browser of choice.
 
 ####I want to deploy my own version (remotely) with your dataset!
 
 We recommend deploying the site to [Forge](http://getforge.com), but any static site host will do. These instructions will be for Forge.
 
--Download <code>web.zip</code> in the GitHub directory however you choose to do so.
--Navigate to [Forge](http://getforge.com) and set up an account (if you don't have one already)
--Follow the instructions for setting up your own site: choose the "deploy from .zip" option
--Drag and drop (or select using a menu) <code>web.zip</code>.
+- Download <code>web.zip</code> in the GitHub directory however you choose to do so.
+- Navigate to [Forge](http://getforge.com) and set up an account (if you don't have one already)
+- Follow the instructions for setting up your own site: choose the "deploy from .zip" option
+- Drag and drop (or select using a menu) <code>web.zip</code>.
 
 Your copy of Champion Affinity should be deployed at your chosen address!
 
