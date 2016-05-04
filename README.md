@@ -42,7 +42,7 @@ These mappings are referenced by our backend scripts for generating our data for
 
 ###Tests
 
-This folder, along with <code>test_controller.py</code> in the root directory, was used to test API calls and make sure the GET requests were formatted properly. Originally, we planned on building a unit test for each individual API endpoint we were referencing, just to explore how the built-in <code>unittest</code> module in Python works. The need to ship something for the contest won out, however.
+This folder, along with <code>test_controller.py</code> in the root directory, was used to test API calls and make sure the API requests were formatted properly. Originally, we planned on building a unit test for each individual API endpoint we were referencing, just to explore how the built-in <code>unittest</code> module in Python works. The need to ship something for the contest won out, however.
 
 ###Web
 
@@ -56,10 +56,27 @@ Now we'll go through the meat of our application; the backend Python scripts tha
 
 All of our backend scripts are written in Python, using version 3.5.1. Any 3.X version should work.
 
-The clustering algorithm we use, [Markov Clustering Algorithm (MCL](https://github.com/koteth/python_mcl), requires the following (also on their GitHub page):
+The clustering algorithm we use, [Markov Clustering Algorithm (MCL)](https://github.com/koteth/python_mcl), requires the following (also on their GitHub page):
 - [numpy](http://www.numpy.org/)
-- [networkx (install with pip or directly from the downloads section)](https://networkx.github.io/documentation/development/install.html)
+- [networkx](https://networkx.github.io/documentation/development/install.html) (install with pip or directly from the downloads section)
+ 
+###How it works
 
+There are four "types" of scripts at root:
+- data
+- generate
+- utility
+- test
+
+####Data Scripts
+
+The data scripts perform our API requests and calculate our metrics, dropping the results in the <code>data</code> folder. The scripts, in the order they are run:
+
+- <code>data_import_champion_list.py</code> - Imports the list of current champions and their ID's to <code>champion_list_api.csv</code>.
+- <code>data_merge_mobafire_icon_api.py</code> - Merges <code>data/champion_list_api.csv</code> and <code>static_data/mobafire-icon-lookup.csv</code> into <code>data/champion_list.csv</code> for later scripts. Sets a default "no meta champions" for a new <code>MCL</code> column.
+- <code>data_import_top_players_master_challenger.py</code> - Imports all current Masters and Challenger summoner ID's to <code>player_id_list.csv</code>.
+- <code>data_import_champion_mastery_data.py</code> - Imports all Mastery Level data for all summoner ID's in <code>player_id_list.csv</code>, and outputs the result to <code>list_of_masteries.csv</code>. File assumes the "personal" rate limit from the API spec; if you have a production API key, you can decrease the timeout in the file.
+- <code>data_import_create_affinity_table.py</code> - Generates the normalized affinity table (the Champion Affinity) from <code>list_of_masteries.csv</code> and outputs the result to <code>affinity_table_normalized.csv</code>. We'll discuss how the affinity metric was generated in a later section.
 
 ##Visualizations
 
