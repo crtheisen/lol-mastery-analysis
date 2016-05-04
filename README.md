@@ -46,11 +46,21 @@ Your copy of Champion Affinity should be deployed at your chosen address!
 
 ####I want to generate a new dataset and deploy!
 
-TBD
+Root Dependency: Python 3.X
+Clustering Dependencies: numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
+
+- Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
+- Run the backend scripts in the following order:
+ - <code>data_import_champion_list.py</code>
+ - <code>data_merge_mobafire_icon_api.py</code>
+ - <code>data_import_top_players_master_challenger.py</code>
+   - *Note: if you'd like to analyze a different set of players, generate your own list of summoner ID's in whatever way you choose, matching the format found in <code>player_id_list.csv</code> in this GitHub repository. Put the result in <code>data/player_id_list.csv</code>*.
+ - <code>data_import_champion_mastery_data.py</code>
+ - <code>data_import_create_affinity_table.py</code>
 
 ##GitHub Structure
 
-First, we'll go over the structure of the files in our repository.
+In this section, we'll go over the structure of the files in our repository.
 
 ###Root
 
@@ -60,6 +70,7 @@ Root contains the following:
 - The python scripts that makeup the backend
 - Our verification text file
 - The deployable <code>web.zip</code> file of our public-facing app
+- Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this applicaiton, you'll need to make your own.
 
 ###Data
 
