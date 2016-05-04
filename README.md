@@ -46,7 +46,7 @@ Your copy of Champion Affinity should be deployed at your chosen address!
 
 ####I want to generate a new dataset and deploy!
 
-*Note: if you want to run the clustering algorithm as well, you'll need both Python 2.7.X and 3.X installed. I personally invoke 3.X using <code>python</code> and 2.7.X using <code>python2</code>. Where appropriate, change the references to these invocations below to match your own installation.*
+*Note: if you want to run the clustering algorithm as well, you'll need both Python 2.7.X and 3.X installed. I personally invoke 3.X using <code>python</code> and 2.7.X using <code>python2</code>. Where appropriate, change the references to these invocations below to match your own installation. There's a discussion on "Why do you have both installed?" in the FAQ at the end.*
 
 Dependency (required): Python 3.X
 
@@ -147,6 +147,18 @@ The generate scripts transform our <code>affinity_table_normalized.csv</code> an
 - <code>generate_centrality_charts.py</code> - Generates <code>web/data/data_chart_champions.tsv</code> and <code>web/data/data_chart_champions_second.tsv</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the chart container uses.
 - <code>generate_force_graph_file.py</code> - Generates <code>web/data/champion_edge_force_graph.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the force graph container uses.
 - <code>generate_radial.py</code> - Generates <code>web/data/champion_edge_bundling.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the radial container uses.
+-
+####"utility_" Scripts
+
+The utility_ series of scripts are for helpers; generating one-time datasets and the like. This isn't part of the current workflow.
+
+- <code>utility_champion_list_heatmap.py</code> - Generates a comma-delimited list of champions. Used by the heatmap visualization to set up the axes of the chart.
+-
+####"test_" Scripts
+
+The test_ series of scripts are for running API tests. As mentioned before, we initially meant to have a nice unit test suite for exploring the API... ran out of time. Sad day.
+
+- <code>test_controller.py</code> - Basic console control to access the "unit tests" in the <code>tests</code> folder.
 
 ##Visualizations
 
