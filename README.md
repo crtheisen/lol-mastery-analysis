@@ -73,7 +73,11 @@ Clustering Dependencies (optional, if you want to try clustering): Python 2.7.X 
   - <code>generate_centrality_charts.py</code>
   - <code>generate_force_graph_file.py</code>
   - <code>generate_radial.py</code>
-- Choose your deployment option from above. 
+- Choose your deployment option from above.
+
+##Metrics
+
+In this section, we'll discuss our metrics in-depth, how they're calculated, and how we would improve each.
 
 ##GitHub Structure
 
@@ -109,9 +113,9 @@ This folder, along with <code>test_controller.py</code> in the root directory, w
 
 Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the <code>web</code> directory.
 
-##Backend (Data Collection and Metric Calculations)
+##Backend
 
-Now we'll go through the meat of our application; the backend Python scripts that pull data from the API calculate our metrics, and create the .csv/.tsv/.json files that our visualizations rely on.
+Now we'll go through the meat of our application; the backend Python scripts that pull data from the API, calculate our metrics, and create the .csv/.tsv/.json files that our visualizations rely on. We'll also discuss how we'd improve the backend in the short term and long term.
 
 ###Dependencies
 
@@ -159,6 +163,12 @@ The utility_ series of scripts are for helpers; generating one-time datasets and
 The test_ series of scripts are for running API tests. As mentioned before, we initially meant to have a nice unit test suite for exploring the API... ran out of time. Sad day.
 
 - <code>test_controller.py</code> - Basic console control to access the "unit tests" in the <code>tests</code> folder.
+
+###Future Improvements
+
+**In the short term:** Our naming scheme organization isn't ideal; moving each of the classes of scripts into their own folders and improving the naming of each file is the next thing to do. We could then generate a Python setup script that would run the entire supply chain and deliver the data files to the web deployment folder.
+
+**Long term:** We'd like to set up a database for storing our datasets. Classifying summoner_ID's by league alongside their mastery data and sucking in as much data as possible to a PostgreSQL database would allow us to analyze our metrics across multiple leagues and see how affinity links and the meta distribution changes as you move up and down the ladder. What's true for Challenger/Master may not be true in Silver (we're guessing they'll be *very* different). Running the backend on a dedicated server and delivering regular updates to the frontend would make a cool live site.
 
 ##Visualizations
 
