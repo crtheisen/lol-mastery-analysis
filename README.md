@@ -153,7 +153,7 @@ The generate scripts transform our <code>affinity_table_normalized.csv</code> an
 The utility_ series of scripts are for helpers; generating one-time datasets and the like. This isn't part of the current workflow.
 
 - <code>utility_champion_list_heatmap.py</code> - Generates a comma-delimited list of champions. Used by the heatmap visualization to set up the axes of the chart.
--
+
 ####"test_" Scripts
 
 The test_ series of scripts are for running API tests. As mentioned before, we initially meant to have a nice unit test suite for exploring the API... ran out of time. Sad day.
