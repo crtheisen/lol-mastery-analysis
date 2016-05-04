@@ -168,7 +168,7 @@ The test_ series of scripts are for running API tests. As mentioned before, we i
 
 **In the short term:** Our naming scheme organization isn't ideal; moving each of the classes of scripts into their own folders and improving the naming of each file is the next thing to do. We could then generate a Python setup script that would run the entire supply chain and deliver the data files to the web deployment folder.
 
-**Long term:** We'd like to set up a database for storing our datasets. Classifying summoner_ID's by league alongside their mastery data and sucking in as much data as possible to a PostgreSQL database would allow us to analyze our metrics across multiple leagues and see how affinity links and the meta distribution changes as you move up and down the ladder. What's true for Challenger/Master may not be true in Silver (we're guessing they'll be *very* different). Running the backend on a dedicated server and delivering regular updates to the frontend would make a cool live site.
+**Long term:** We'd like to set up a database for storing our datasets. Classifying summoner_ID's by league alongside their mastery data and sucking in as much data as possible to a PostgreSQL database would allow us to analyze our metrics across multiple leagues and see how affinity links and the meta distribution changes as you move up and down the ladder. What's true for Challenger/Master may not be true in Silver (we're guessing they'll be *very* different). Running the backend on a dedicated server and delivering regular updates to the frontend would make a cool live site. We originally planned to set up a database for this project, but .csv's were easier for us to use for rapid experimentation.
 
 ##Visualizations
 
