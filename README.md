@@ -83,7 +83,7 @@ In this section, we'll discuss our metrics in-depth, how they're calculated, and
 
 In this section, we'll go over the structure of the files in our repository.
 
-###Root
+####Root
 
 Root contains the following:
 
@@ -93,11 +93,11 @@ Root contains the following:
 - The deployable <code>web.zip</code> file of our public-facing app
 - Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this applicaiton, you'll need to make your own.
 
-###Data
+####Data
 
 This folder contains the files that support the creation and evaluation of our metrics. The files on GitHub represent mastery data from Masters/Challenger players and metric calculations from April 25th, 2016. These files can be regenerated using the backend scripts at any time, though some differences should be expected in the final results.
 
-###Static_Data
+####Static_Data
 
 This folder contains a single file, <code>mobafire-icon-lookup.csv</code>. This file provides some mappings that were generated manually: 
 - <code>Name -> Graph_ID</code> for mapping to nodes on our eventual visualizations
@@ -105,11 +105,11 @@ This folder contains a single file, <code>mobafire-icon-lookup.csv</code>. This 
 - <code>Name -> Image_ID</code> for looking up each champion's icon.
 These mappings are referenced by our backend scripts for generating our data for our final public-facing site.
 
-###Tests
+####Tests
 
 This folder, along with <code>test_controller.py</code> in the root directory, was used to test API calls and make sure the API requests were formatted properly. Originally, we planned on building a unit test for each individual API endpoint we were referencing, just to explore how the built-in <code>unittest</code> module in Python works. The need to ship something for the contest won out, however.
 
-###Web
+####Web
 
 Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the <code>web</code> directory.
 
@@ -164,7 +164,7 @@ The test_ series of scripts are for running API tests. As mentioned before, we i
 
 - <code>test_controller.py</code> - Basic console control to access the "unit tests" in the <code>tests</code> folder.
 
-###Future Improvements
+###Future Improvements - Backend
 
 **In the short term:** Our naming scheme organization isn't ideal; moving each of the classes of scripts into their own folders and improving the naming of each file is the next thing to do. We could then generate a Python setup script that would run the entire supply chain and deliver the data files to the web deployment folder.
 
@@ -173,3 +173,5 @@ The test_ series of scripts are for running API tests. As mentioned before, we i
 ##Visualizations
 
 ##Site Design
+
+##FAQ
