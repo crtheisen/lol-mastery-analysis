@@ -44,7 +44,22 @@ These mappings are referenced by our backend scripts for generating our data for
 
 This folder, along with <code>test_controller.py</code> in the root directory, was used to test API calls and make sure the GET requests were formatted properly. Originally, we planned on building a unit test for each individual API endpoint we were referencing, just to explore how the built-in <code>unittest</code> module in Python works. The need to ship something for the contest won out, however.
 
+###Web
+
+Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the web directory; we'll discuss deployment options later on in the <code>README</code>.
+
 ##Backend (Data Collection and Metric Calculations)
+
+Now we'll go through the meat of our application; the backend Python scripts that pull data from the API calculate our metrics, and create the .csv/.tsv/.json files that our visualizations rely on.
+
+###Dependencies
+
+All of our backend scripts are written in Python, using version 3.5.1. Any 3.X version should work.
+
+The clustering algorithm we use, [Markov Clustering Algorithm (MCL](https://github.com/koteth/python_mcl), requires the following (also on their GitHub page):
+- [numpy](http://www.numpy.org/)
+- [networkx (install with pip or directly from the downloads section)](https://networkx.github.io/documentation/development/install.html)
+
 
 ##Visualizations
 
