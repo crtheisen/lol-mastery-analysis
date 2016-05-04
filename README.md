@@ -111,7 +111,7 @@ This folder, along with <code>test_controller.py</code> in the root directory, w
 
 ####Web
 
-Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the <code>web</code> directory.
+Web contains our stand-alone static website that displays our final metrics. You can see the latest version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the <code>web</code> directory.
 
 ##Backend
 
