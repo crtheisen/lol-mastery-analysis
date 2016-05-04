@@ -46,8 +46,9 @@ Your copy of Champion Affinity should be deployed at your chosen address!
 
 ####I want to generate a new dataset and deploy!
 
-Root Dependency: Python 3.X
-Clustering Dependencies: numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
+Dependency (required): Python 3.X
+
+Clustering Dependencies (optional, if you want to try clustering): numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
 
 - Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
 - Run the backend scripts in the following order:
@@ -90,7 +91,7 @@ This folder, along with <code>test_controller.py</code> in the root directory, w
 
 ###Web
 
-Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the web directory; we'll discuss deployment options later on in the <code>README</code>.
+Web contains our stand-alone static website that displays our final metrics. You can see the latests version of our site at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). You can also deploy your own version out of the <code>web</code> directory.
 
 ##Backend (Data Collection and Metric Calculations)
 
@@ -124,7 +125,12 @@ The data scripts perform our API requests and calculates our champion affinity m
 
 ####"generate_" Scripts
 
-The generate scripts transform our <code>affinity_table_normalized.csv</code> and <code>champion_list.csv</code> into the champion centrality metric, along with readable formats for our visualization tools in our webkit. The results of these scripts are dropped into the <code>web/data</code> folder, which our visualizations access on our site.
+The generate scripts transform our <code>affinity_table_normalized.csv</code> and <code>champion_list.csv</code> into the champion centrality metric, along with readable formats for our visualization tools in our webkit. The results of these scripts are dropped into the <code>web/data</code> folder, which our visualizations access on our site. The scripts can be run in any order:
+
+- <code>generate_affinity_heatmap.py</code> - Generates <code>web/data/heatmap_champs.tsv</code> from <code>data/affinity_table_normalized.csv</code>, which the heatmap container uses.
+- <code>generate_centrality_charts.py</code> - Generates <code>web/data/data_chart_champions.tsv</code> and <code>web/data/data_chart_champions_second.tsv</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the chart container uses.
+- <code>generate_force_graph_file.py</code> - Generates <code>web/data/champion_edge_force_graph.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the force graph container uses.
+- <code>generate_radial.py</code> - Generates <code>web/data/champion_edge_bundling.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the radial container uses.
 
 ##Visualizations
 
