@@ -46,18 +46,34 @@ Your copy of Champion Affinity should be deployed at your chosen address!
 
 ####I want to generate a new dataset and deploy!
 
+*Note: if you want to run the clustering algorithm as well, you'll need both Python 2.7.X and 3.X installed. I personally invoke 3.X using <code>python</code> and 2.7.X using <code>python2</code>. Where appropriate, change the references to these invocations below to match your own installation.*
+
 Dependency (required): Python 3.X
 
-Clustering Dependencies (optional, if you want to try clustering): numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
+Clustering Dependencies (optional, if you want to try clustering): Python 2.7.X (Yes, this needs to be installed at the same time as 3.X), numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
 
 - Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
-- Run the backend scripts in the following order:
+- Delete everything in <code>data</code> and <code>web/data</code>.
+- Run the <code>data_</code> backend scripts in the following order:
  - <code>data_import_champion_list.py</code>
  - <code>data_merge_mobafire_icon_api.py</code>
  - <code>data_import_top_players_master_challenger.py</code>
    - *Note: if you'd like to analyze a different set of players, generate your own list of summoner ID's in whatever way you choose, matching the format found in <code>player_id_list.csv</code> in this GitHub repository. Put the result in <code>data/player_id_list.csv</code>*.
  - <code>data_import_champion_mastery_data.py</code>
  - <code>data_import_create_affinity_table.py</code>
+- (Optional) Run MCL to create the set of "meta" champions, and add them to <code>data/champion_list.csv</code>.
+ - Follow the instructions on the [Python MCL](https://github.com/koteth/python_mcl) page to install the package.
+ - Copy <code>data/affinity_table_normalized.csv</code> generated from the previous steps to the MCL directory.
+ - Run MCL: <code>python2 mcl_clustering.py -e 2 -i 3.4 /affinity_table_normalized.csv</code>
+   - You can change the arguments as you see fit. These are the arguments used for the live site.
+ - Locate the largest cluster in the MCL results. Open <code>data/champion_list.csv</code> in your favorite spreadsheet editor.
+ - The cluster is listed in terms of <code>Graph_ID</code> in <code>data/champion_list.csv</code>. For each <code>Graph_ID</code> in your largest cluster, change the MCL field from <code>1</code> to <code>2</code>.
+- Run the <code>generate_</code> backend scripts in the following order: 
+  - <code>generate_affinity_heatmap.py</code>
+  - <code>generate_centrality_charts.py</code>
+  - <code>generate_force_graph_file.py</code>
+  - <code>generate_radial.py</code>
+- Choose your deployment option from above. 
 
 ##GitHub Structure
 
