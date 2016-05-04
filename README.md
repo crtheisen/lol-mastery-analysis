@@ -129,7 +129,7 @@ There are four "types" of scripts at root:
 - utility
 - test
 
-####"data_" Scripts
+####"data_" scripts
 
 The data scripts perform our API requests and calculates our champion affinity metric, dropping the results in the <code>data</code> folder. The scripts, in the order they are run:
 
@@ -139,7 +139,7 @@ The data scripts perform our API requests and calculates our champion affinity m
 - <code>data_import_champion_mastery_data.py</code> - Imports all Mastery Level data for all summoner ID's in <code>player_id_list.csv</code>, and outputs the result to <code>list_of_masteries.csv</code>. File assumes the "personal" rate limit from the API spec; if you have a production API key, you can decrease the timeout in the file.
 - <code>data_import_create_affinity_table.py</code> - Generates the normalized affinity table (the Champion Affinity) from <code>list_of_masteries.csv</code> and outputs the result to <code>affinity_table_normalized.csv</code>. We'll discuss how the affinity metric was generated in a later section.
 
-####"generate_" Scripts
+####"generate_" scripts
 
 The generate scripts transform our <code>affinity_table_normalized.csv</code> and <code>champion_list.csv</code> into the champion centrality metric, along with readable formats for our visualization tools in our webkit. The results of these scripts are dropped into the <code>web/data</code> folder, which our visualizations access on our site. The scripts can be run in any order:
 
@@ -147,14 +147,14 @@ The generate scripts transform our <code>affinity_table_normalized.csv</code> an
 - <code>generate_centrality_charts.py</code> - Generates <code>web/data/data_chart_champions.tsv</code> and <code>web/data/data_chart_champions_second.tsv</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the chart container uses.
 - <code>generate_force_graph_file.py</code> - Generates <code>web/data/champion_edge_force_graph.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the force graph container uses.
 - <code>generate_radial.py</code> - Generates <code>web/data/champion_edge_bundling.json</code> from <code>data/affinity_table_normalized.csv</code> and <code>data/champion_list.csv</code>, which the radial container uses.
--
-####"utility_" Scripts
+
+####"utility_" scripts
 
 The utility_ series of scripts are for helpers; generating one-time datasets and the like. This isn't part of the current workflow.
 
 - <code>utility_champion_list_heatmap.py</code> - Generates a comma-delimited list of champions. Used by the heatmap visualization to set up the axes of the chart.
 
-####"test_" Scripts
+####"test_" scripts
 
 The test_ series of scripts are for running API tests. As mentioned before, we initially meant to have a nice unit test suite for exploring the API... ran out of time. Sad day.
 
