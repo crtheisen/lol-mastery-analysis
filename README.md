@@ -263,7 +263,7 @@ Our naming scheme organization isn't ideal; moving each of the classes of script
 
 ##Visualizations
 
-All of our visualizations were built using [D3.js](https://d3js.org/). The visualization browsing site [bl.ocks.org](http://bl.ocks.org/) was a huge inspiration for us when looking for new ways to present data.
+All of our visualizations were built using [D3.js](https://d3js.org/). This was chosen because of the ease of implementation and its compatibility with mobile platforms; we wanted the site to be as accessible as possible. The visualization browsing site [bl.ocks.org](http://bl.ocks.org/) was a huge inspiration for us when looking for new ways to present data.
 
 ####Heatmap
 
@@ -289,7 +289,22 @@ This visualization was inspired by [Sundar's Force Layout Graph](http://bl.ocks.
 
 So pretty! Edge bundling/radial charts are gorgeous to look at and provides a pretty cool spin on showing how champions relate to one another. We built our version off of [Mike Bostock's Hierarchical Edge Bundling](https://bl.ocks.org/mbostock/7607999)
 
+####Giving Back/Next Steps
+
+After we finalize our contest submission, we're planning on submitting all four of our modified visualizations back to [bl.ocks.org](http://bl.ocks.org/) so that future users of the site can build off of us, as well. Many of the visualizations we chose to build off of were themselves built from someone else's work, and continuing this cycle of improvement is important to us.
+
 ##Site Design
+
+First, let's set up the goals for the site:
+
+- It should present data in an interesting and informative way
+- It should work on as many platforms as possible (including mobile!)
+- It should load quickly and use as little bandwidth as possible
+- It should be easy for others to deploy themselves (replication!)
+
+With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support.
+
+Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualisation takes a bit of time to calculate and display.
 
 ##FAQ
 
