@@ -259,6 +259,20 @@ Our naming scheme organization isn't ideal; moving each of the classes of script
 
 ##Visualizations
 
+All of our visualizations were built using [D3.js](https://d3js.org/). The visualization browsing site [bl.ocks.org](http://bl.ocks.org/) was a huge inspiration for us when looking for new ways to present data.
+
+####Heatmap
+
+Heatmaps are a visually interesting way to present tables of data that have a unified range across them. Being able to sort on each axis was important for us, as we wanted users to be able to focus on a specific champion without downloading a file to open in a spreadsheet editor. We heavily modified [Ian YF Chang's heatmap example](http://bl.ocks.org/ianyfchang/8119685) to accomplish this. 
+
 ##Site Design
 
 ##FAQ
+
+##License
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
