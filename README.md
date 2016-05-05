@@ -20,6 +20,8 @@ Rob acted as a sounding board for ideas (including many late nights in Discord/H
 
 Fair enough! Here's the step by step instructions for several use cases of the app. If you're confused about what some of these steps mean, refer farther down in the document. Otherwise, feel free to reach out to ask questions!
 
+For dependency installation, I highly recommend making use of [<code>pip</code>](http://python-packaging-user-guide.readthedocs.io/en/latest/installing/).
+
 ####I just want to see the final product!
 
 Easy! We have a live version of the app up at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). Go nuts!
@@ -46,11 +48,9 @@ Your copy of Champion Affinity should be deployed at your chosen address!
 
 ####I want to generate a new dataset and deploy!
 
-*Note: if you want to run the clustering algorithm as well, you'll need both Python 2.7.X and 3.X installed. I personally invoke 3.X using <code>python</code> and 2.7.X using <code>python2</code>. Where appropriate, change the references to these invocations below to match your own installation. There's a discussion on "Why do you have both installed?" in the FAQ at the end.*
-
 Dependency (required): Python 3.X
 
-Clustering Dependencies (optional, if you want to try clustering): Python 2.7.X (Yes, this needs to be installed at the same time as 3.X), numpy, networkx, [python_mcl](https://github.com/koteth/python_mcl)
+Clustering Dependencies (optional, if you want to try clustering): [numpy](http://www.numpy.org/), [networkx](https://networkx.github.io/documentation/development/install.html), and our Python 3.X fork of [python_mcl](https://github.com/theisencr/python_mcl).
 
 - Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
 - Delete everything in <code>data</code> and <code>web/data</code>.
@@ -62,9 +62,9 @@ Clustering Dependencies (optional, if you want to try clustering): Python 2.7.X 
  - <code>data_import_champion_mastery_data.py</code>
  - <code>data_import_create_affinity_table.py</code>
 - (Optional) Run MCL to create the set of "meta" champions, and add them to <code>data/champion_list.csv</code>.
- - Follow the instructions on the [Python MCL](https://github.com/koteth/python_mcl) page to install the package.
+ - Follow the instructions on the [Python MCL](https://github.com/theisencr/python_mcl) page to install the package.
  - Copy <code>data/affinity_table_normalized.csv</code> generated from the previous steps to the MCL directory.
- - Run MCL: <code>python2 mcl_clustering.py -e 2 -i 3.4 /affinity_table_normalized.csv</code>
+ - Run MCL: <code>mcl_clustering.py -e 2 -i 1.6 /affinity_table_normalized.csv</code>
    - You can change the arguments as you see fit. These are the arguments used for the live site.
  - Locate the largest cluster in the MCL results. Open <code>data/champion_list.csv</code> in your favorite spreadsheet editor.
  - The cluster is listed in terms of <code>Graph_ID</code> in <code>data/champion_list.csv</code>. For each <code>Graph_ID</code> in your largest cluster, change the MCL field from <code>1</code> to <code>2</code>.
@@ -121,9 +121,9 @@ Now we'll go through the meat of our application; the backend Python scripts tha
 
 All of our backend scripts are written in Python, using version 3.5.1. Any 3.X version should work.
 
-The clustering algorithm we use, [Markov Clustering Algorithm (MCL)](https://github.com/koteth/python_mcl), requires the following (also on their GitHub page):
+The clustering algorithm we use, [Markov Clustering Algorithm (MCL)](https://github.com/theisencr/python_mcl), requires the following:
 - [numpy](http://www.numpy.org/)
-- [networkx](https://networkx.github.io/documentation/development/install.html) (install with pip or directly from the downloads section)
+- [networkx](https://networkx.github.io/documentation/development/install.html)
  
 ###How it works
 
