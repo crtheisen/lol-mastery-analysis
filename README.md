@@ -76,7 +76,7 @@ Clustering Dependencies (optional, if you want to try clustering): [numpy](http:
 
 ##Metrics
 
-In this section, we'll discuss our metrics in-depth, how they're calculated, and how we would improve each.
+In this section, we'll discuss our metrics, how they're calculated, and how we would improve each one.
 
 ####Champion Affinity
 
