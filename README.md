@@ -190,6 +190,10 @@ This folder contains a single file, <code>mobafire-icon-lookup.csv</code>. This 
 - <code>Name -> Image_ID</code> for looking up each champion's icon.
 These mappings are referenced by our backend scripts for generating our data for our final public-facing site.
 
+####Snips
+
+Contains creenshots of our visualizations for documentation purposes.
+
 ####Tests
 
 This folder, along with <code>test_controller.py</code> in the root directory, was used to test API calls and make sure the API requests were formatted properly. Originally, we planned on building a unit test for each individual API endpoint we were referencing, just to explore how the built-in <code>unittest</code> module in Python works. The need to ship something for the contest won out, however.
