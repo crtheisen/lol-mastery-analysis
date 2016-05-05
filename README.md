@@ -306,7 +306,13 @@ With these goals in mind, we made two major design decisions. One, we decided to
 
 Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualisation takes a bit of time to calculate and display.
 
+We're using [Forge](http://www.getforge.com) as our hosting platform. Forge makes it really easy to publish static content sites, and has a generous free tier for those who would like to replicate our project.
+
 ##FAQ
+
+####Why'd you fork that MCL library?
+
+We were originally going to write up instructions on how to run both Python 2.7 and 3.5 on the same machine for replicating the backend, but decided we could give upgrading it to 3.5 ourselves a try! It turned out to be really straightforward. Hopefully others will find the upgrade useful as well!
 
 ##License
 
