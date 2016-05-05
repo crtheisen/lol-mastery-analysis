@@ -313,11 +313,3 @@ We're using [Forge](http://www.getforge.com) as our hosting platform. Forge make
 ####Why'd you fork that MCL library?
 
 We were originally going to write up instructions on how to run both Python 2.7 and 3.5 on the same machine for replicating the backend, but decided we could give upgrading it to 3.5 ourselves a try! It turned out to be really straightforward. Hopefully others will find the upgrade useful as well!
-
-##License
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
