@@ -176,7 +176,7 @@ Root contains the following:
 - The python scripts that makeup the backend
 - Our verification text file
 - The deployable <code>web.zip</code> file of our public-facing app
-- Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this applicaiton, you'll need to make your own.
+- Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this application, you'll need to make your own.
 
 ####Data
 
@@ -192,7 +192,7 @@ These mappings are referenced by our backend scripts for generating our data for
 
 ####Snips
 
-Contains creenshots of our visualizations for documentation purposes.
+Contains screenshots of our visualizations for documentation purposes.
 
 ####Tests
 
@@ -255,7 +255,7 @@ The test_ series of scripts are for running API tests. As mentioned before, we i
 
 ###Future Improvements - Backend
 
-**In the short term:** Right now the app is hard-coded for 130 champions. As soon as a new champion releases, Bad Things will happen. This is embarassing, but the app will be updated to be compatible with the new champ (and future champs) as soon as we can. 
+**In the short term:** Right now the app is hard-coded for 130 champions. As soon as a new champion releases, Bad Things will happen. This is embarrassing, but the app will be updated to be compatible with the new champ (and future champs) as soon as we can. 
 
 Our naming scheme organization isn't ideal; moving each of the classes of scripts into their own folders and improving the naming of each file is the next thing to do. We could then generate a Python setup script that would run the entire supply chain and deliver the data files to the web deployment folder.
 
@@ -304,7 +304,7 @@ First, let's set up the goals for the site:
 
 With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support.
 
-Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualisation takes a bit of time to calculate and display.
+Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualization takes a bit of time to calculate and display.
 
 We're using [Forge](http://www.getforge.com) as our hosting platform. Forge makes it really easy to publish static content sites, and has a generous free tier for those who would like to replicate our project.
 
