@@ -72,7 +72,7 @@ Clustering Dependencies (optional, if you want to try clustering): [numpy](http:
   - <code>generate_centrality_charts.py</code>
   - <code>generate_force_graph_file.py</code>
   - <code>generate_radial.py</code>
-- Choose your deployment option from above.
+- Choose your deployment option from above. If you choose the remote deployment, compress the <code>web</code> folder to a zip file for uploading to Forge.
 
 ##Metrics
 
