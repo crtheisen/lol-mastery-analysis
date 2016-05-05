@@ -63,8 +63,7 @@ Clustering Dependencies (optional, if you want to try clustering): [numpy](http:
  - <code>data_import_create_affinity_table.py</code>
 - (Optional) Run MCL to create the set of "meta" champions, and add them to <code>data/champion_list.csv</code>.
  - Follow the instructions on the [Python MCL](https://github.com/theisencr/python_mcl) page to install the package.
- - Copy <code>data/affinity_table_normalized.csv</code> generated from the previous steps to the MCL directory.
- - Run MCL: <code>mcl_clustering.py -e 2 -i 1.6 /affinity_table_normalized.csv</code>
+ - Run MCL: <code>mcl_clustering.py -e 2 -i 1.6 affinity_table_normalized.csv</code>
    - You can change the arguments as you see fit. These are the arguments used for the live site.
  - Locate the largest cluster in the MCL results. Open <code>data/champion_list.csv</code> in your favorite spreadsheet editor.
  - The cluster is listed in terms of <code>Graph_ID</code> in <code>data/champion_list.csv</code>. For each <code>Graph_ID</code> in your largest cluster, change the MCL field from <code>1</code> to <code>2</code>.
