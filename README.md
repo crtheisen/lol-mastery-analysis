@@ -267,7 +267,27 @@ All of our visualizations were built using [D3.js](https://d3js.org/). The visua
 
 ####Heatmap
 
+![hi](https://raw.githubusercontent.com/theisencr/lol-mastery-analysis/master/snips/heatmap.PNG)
+
 Heatmaps are a visually interesting way to present tables of data that have a unified range across them. Being able to sort on each axis was important for us, as we wanted users to be able to focus on a specific champion without downloading a file to open in a spreadsheet editor. We heavily modified [Ian YF Chang's heatmap example](http://bl.ocks.org/ianyfchang/8119685) to accomplish this. 
+
+####Centrality Bar Charts
+
+![hi](https://raw.githubusercontent.com/theisencr/lol-mastery-analysis/master/snips/chart.PNG)
+
+Because the centrality metric was a simple "more is better" sum of affinities, we figured a bar chart would be fine for this. Highlighting a column and getting the exact figure was a nice bonus. We modified [Mike Bostock's Bar Chart](https://bl.ocks.org/mbostock/3885304) for this one.
+
+####Force Graph
+
+![hi](https://raw.githubusercontent.com/theisencr/lol-mastery-analysis/master/snips/force_graph.PNG)
+
+This visualization was inspired by [Sundar's Force Layout Graph](http://bl.ocks.org/eesur/be2abfb3155a38be4de4). We loved how we could drag nodes around the space to explore it, and the extra link popping up was nice; tying it to a champion's Mobafire page was an obvious progression to us.
+
+####Radial (Edge Bundling) Chart
+
+![hi](https://raw.githubusercontent.com/theisencr/lol-mastery-analysis/master/snips/radial.PNG)
+
+So pretty! Edge bundling/radial charts are gorgeous to look at and provides a pretty cool spin on showing how champions relate to one another. We built our version off of [Mike Bostock's Hierarchical Edge Bundling](https://bl.ocks.org/mbostock/7607999)
 
 ##Site Design
 
