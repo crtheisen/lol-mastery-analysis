@@ -27,7 +27,7 @@
      "id":   12,
      "link": "http://www.mobafire.com/league-of-legends/champion/Alistar-4",
      "img":  "http://ddragon.leagueoflegends.com/cdn/6.8.1/img/champion/Alistar.png",
-     "group": 1},
+     "group": 2},
     {
      "name": "Amumu",
      "graph_num": 4,
@@ -104,7 +104,7 @@
      "id":   51,
      "link": "http://www.mobafire.com/league-of-legends/champion/Caitlyn-67",
      "img":  "http://ddragon.leagueoflegends.com/cdn/6.8.1/img/champion/Caitlyn.png",
-     "group": 1},
+     "group": 2},
     {
      "name": "Cassiopeia",
      "graph_num": 15,
@@ -202,7 +202,7 @@
      "id":   105,
      "link": "http://www.mobafire.com/league-of-legends/champion/Fizz-87",
      "img":  "http://ddragon.leagueoflegends.com/cdn/6.8.1/img/champion/Fizz.png",
-     "group": 2},
+     "group": 1},
     {
      "name": "Galio",
      "graph_num": 29,
@@ -587,7 +587,7 @@
      "id":   107,
      "link": "http://www.mobafire.com/league-of-legends/champion/Rengar-103",
      "img":  "http://ddragon.leagueoflegends.com/cdn/6.8.1/img/champion/Rengar.png",
-     "group": 2},
+     "group": 1},
     {
      "name": "Riven",
      "graph_num": 84,
