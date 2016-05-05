@@ -149,7 +149,7 @@ For each champion, we take the sum of all affinity values for the other 129 cham
 
 #####How would you improve champion centrality?
 
-Right now this metrics is **very** closely correlated with champion clustering. This is more of an artifact of how clustering didn't quite work out how we expected, but separating these two concepts more would be a good next step.
+Right now this metric is **very** closely correlated with champion clustering. This is more of an artifact of how clustering didn't quite work out how we expected, but separating these two concepts more would be a good next step.
 
 ####Champion Clustering
 We wanted to see if we could predict, based on champion mastery data, which champions are part of the "meta" at the Challenger/Master level. To do this, we used Markov Clustering (a Machine Learning technique) to identify the champions that were the most interconnected in our dataset.
