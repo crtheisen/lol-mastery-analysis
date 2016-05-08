@@ -302,7 +302,7 @@ First, let's set up the goals for the site:
 - It should load quickly and use as little bandwidth as possible
 - It should be easy for others to deploy themselves (replication!)
 
-With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support.
+With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support; our visualizations cause some table breaking, and the pseudocode has some wordwrap issues on the About page, but the site is fully functional otherwise.
 
 Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualization takes a bit of time to calculate and display.
 
