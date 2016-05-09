@@ -19,6 +19,12 @@
 
 For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), we decided to explore how the mastery data provided by the Riot API can model the relationships between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion. We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated below (or on the site's [about](http://champion-affinity.getforge.io/about) page).
 
+This entry into the API challenge is in the *Creativity/Originality* category of the API contest. The prompt:
+
+*Creative and original ideas are always a breath of fresh air. Developers often build and iterate on successful ideas, but this category is meant to reward the individuals who aren’t afraid to challenge convention in pursuit of new and revolutionary ideas. Submissions in this category should focus on a new way to use* (**visualize, analyze,** *etc) champion mastery data. We are always looking for ways to encourage developers to think outside of the box.*
+
+Because we're approaching the analysis and visualization of champion master data in a new way (aggregate vs. individual summoner analysis), we felt our entry was most approprate in this category.
+
 In this README, we'll go through:
 
 - How to run the application on your own (in various forms).
