@@ -20,7 +20,7 @@ Rob acted as a sounding board for ideas (including many late nights in Discord/H
 
 Here's the step by step instructions for several use cases of the app. If you're confused about what some of these steps mean, refer farther down in the document. Otherwise, feel free to reach out to ask questions.
 
-There's a minimal amount of dependencies to run this application. If you just want to see the final product, navigate to our site (listed at the top of this page and throughout our document). If you want to run the backend scripts yourself, Python 3.X is required. Git is highly recommended to pull the repository off GitHub. Finally, we highly recommending using [pip](http://python-packaging-user-guide.readthedocs.io/en/latest/installing/) for Python dependency installation.
+There's a minimal amount of dependencies to run this application. If you just want to see the final product, navigate to our site (listed at the top of this page and throughout our document). If you want to run the backend scripts yourself, Python 3.X is required. Git is highly recommended to pull the repository off GitHub. Finally, we recommend using [pip](http://python-packaging-user-guide.readthedocs.io/en/latest/installing/) for Python dependency installation.
 
 ####I just want to see the final product.
 
