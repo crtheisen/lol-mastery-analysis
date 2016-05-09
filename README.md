@@ -1,5 +1,21 @@
 # Champion Affinity ([live site](http://champion-affinity.getforge.io/))
 
+- [I Just Want To Run This Thing](https://github.com/theisencr/lol-mastery-analysis#running-the-application)
+- [Metrics](https://github.com/theisencr/lol-mastery-analysis#metrics)
+  - [Champion Affinity](https://github.com/theisencr/lol-mastery-analysis#champion-affinity)
+    - [Affinity Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-affinity)
+  - [Champion Centrality](https://github.com/theisencr/lol-mastery-analysis#champion-centrality)
+    - [Centrality Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-centrality)
+  - [Champion Clustering](https://github.com/theisencr/lol-mastery-analysis#champion-clustering)
+    - [Clustering Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-clustering)
+  - [GitHub Structure](https://github.com/theisencr/lol-mastery-analysis#github-structure)
+  - [Backend](https://github.com/theisencr/lol-mastery-analysis#backend)
+    - [Backend Improvements](https://github.com/theisencr/lol-mastery-analysis#future-improvements---backend)
+  - [Visualizations](https://github.com/theisencr/lol-mastery-analysis#visualizations)
+    - [Visualizations Next Steps](https://github.com/theisencr/lol-mastery-analysis#giving-backnext-steps)
+  - [Site Design](https://github.com/theisencr/lol-mastery-analysis#site-design) 
+    - [Site Improvements](https://github.com/theisencr/lol-mastery-analysis#site-improvements)
+
 For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), we decided to explore how the mastery data provided by the Riot API can model the relationships between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion. We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated below (or on the site's [about](http://champion-affinity.getforge.io/about) page).
 
 In this README, we'll go through:
@@ -17,7 +33,7 @@ Chris designed the metrics, did the development work, and wrote most of the word
 
 Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, wrote text content, and provided proofreading and feedback on the final application.
 
-##I Just Want To Run This Thing.
+##Running the Application
 
 Here's the step by step instructions for several use cases of the app. If you're confused about what some of these steps mean, refer farther down in the document. Otherwise, feel free to reach out to ask questions.
 
@@ -308,6 +324,10 @@ Each visualization is stuck into a separate .html container for display on each 
 We're using [Forge](http://www.getforge.com) as our hosting platform. Forge makes it really easy to publish static content sites, and has a generous free tier for those who would like to replicate our project.
 
 The color scheme is pretty basic. We didn't want a visually noisy site that would be hard to parse and understand on smaller screens. We didn't want a simple white background (hard on the eyes), but we needed something that would provide the same contrast as white for our visualizations. The brass/manilla color worked great for this; it's [f.lux-like](https://justgetflux.com/). 
+
+####Site Improvements
+
+We have some pretty serious table breaking going on for smaller resolutions and mobile platforms. It doesn't cause functionality issues, as you can simply scroll and zoom to make the visualizations fit on the screen, but it is a concern. Allowing the visualizations to grow and shrink depending on the browser/resolution/etc. instead of fixed widths is the next logical step.
 
 ##FAQ
 
