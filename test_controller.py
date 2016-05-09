@@ -24,6 +24,5 @@ while(choice > 0 and choice < 3):
 
   if(choice == 2): #summonerv1.4
     tests = smn.TestRiotSummoner14(api)
-
     tests.test_get_playerid_from_playername()
 

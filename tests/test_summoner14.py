@@ -7,4 +7,4 @@ class TestRiotSummoner14():
 
   def test_get_playerid_from_playername(self):
     result = self.api.get_playerid_from_playername("Ellipson,T3lrec")
-    print result
+    print(result)
