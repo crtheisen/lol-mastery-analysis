@@ -317,17 +317,19 @@ First, let's set up the goals for the site:
 - It should load quickly and use as little bandwidth as possible
 - It should be easy for others to deploy themselves (replication!)
 
-With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support; our visualizations cause some table breaking, and the pseudocode has some wordwrap issues on the About page, but the site is fully functional otherwise.
+With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on. Future iterations of the site will also precalculate different leagues on a regular schedule (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support; our visualizations cause some table breaking, and the pseudocode has some wordwrap issues on the About page, but the site is fully functional on your mobile device.
 
 Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualization takes a bit of time to calculate and display.
 
 We're using [Forge](http://www.getforge.com) as our hosting platform. Forge makes it really easy to publish static content sites, and has a generous free tier for those who would like to replicate our project.
 
-The color scheme is pretty basic. We didn't want a visually noisy site that would be hard to parse and understand on smaller screens. We didn't want a simple white background (hard on the eyes), but we needed something that would provide the same contrast as white for our visualizations. The brass/manilla color worked great for this; it's [f.lux-like](https://justgetflux.com/). 
+The color scheme is pretty basic. We didn't want a visually noisy site that would be hard to parse and understand on smaller screens. Additionally, one of our demo testers pointed out that an early background (a character splash screen) was making it hard for him to read the charts and graphs because of his color blindness. We didn't want a simple white background (hard on the eyes), but we needed something that would provide the same contrast as white for our visualizations. The brass/manilla color worked great for this; it's [f.lux-like](https://justgetflux.com/). We've specifically chosen our colors to be compatible with the types of [color blindness provided by NIH](https://nei.nih.gov/health/color_blindness/facts_about). While blue-yellow color blindness looks like it might be an issue, the percieved colors still allow for contrast on our site.
 
 ####Site Improvements
 
 We have some pretty serious table breaking going on for smaller resolutions and mobile platforms. It doesn't cause functionality issues, as you can simply scroll and zoom to make the visualizations fit on the screen, but it is a concern. Allowing the visualizations to grow and shrink depending on the browser/resolution/etc. instead of fixed widths is the next logical step.
+
+A more visually interesting background and color scheme is a possibility; while we designed with accessibility in mind, having a "color-blind" version of the site might be one way to do more visually interesting components.
 
 ##FAQ
 
