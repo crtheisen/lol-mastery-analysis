@@ -1,41 +1,65 @@
 # Champion Affinity ([live site](http://champion-affinity.getforge.io/))
 
-For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), we decided to explore how the mastery data provided by the Riot API can model the relationships between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion. We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated below (or on the site's [about](http://champion-affinity.getforge.io/about) page)
+- [Running the Application](https://github.com/theisencr/lol-mastery-analysis#running-the-application)
+- [Metrics](https://github.com/theisencr/lol-mastery-analysis#metrics)
+  - [Champion Affinity](https://github.com/theisencr/lol-mastery-analysis#champion-affinity)
+    - [Affinity Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-affinity)
+  - [Champion Centrality](https://github.com/theisencr/lol-mastery-analysis#champion-centrality)
+    - [Centrality Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-centrality)
+  - [Champion Clustering](https://github.com/theisencr/lol-mastery-analysis#champion-clustering)
+    - [Clustering Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-clustering)
+  - [GitHub Structure](https://github.com/theisencr/lol-mastery-analysis#github-structure)
+  - [Backend](https://github.com/theisencr/lol-mastery-analysis#backend)
+    - [Backend Improvements](https://github.com/theisencr/lol-mastery-analysis#future-improvements---backend)
+  - [Visualizations](https://github.com/theisencr/lol-mastery-analysis#visualizations)
+    - [Visualizations Next Steps](https://github.com/theisencr/lol-mastery-analysis#giving-backnext-steps)
+  - [Site Design](https://github.com/theisencr/lol-mastery-analysis#site-design) 
+    - [Site Improvements](https://github.com/theisencr/lol-mastery-analysis#site-improvements)
+  - [FAQ] (https://github.com/theisencr/lol-mastery-analysis#faq) 
+
+For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), we decided to explore how the mastery data provided by the Riot API can model the **relationships** between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion. While we expected other entries to the competition to focus on individual recommendations, we wanted to provide an overview of the **entire community at once in an interesting way.** We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated below (or on the site's [about](http://champion-affinity.getforge.io/about) page).
+
+This entry into the API challenge is in the *Creativity/Originality* category of the API contest. The prompt:
+
+*Creative and original ideas are always a breath of fresh air. Developers often build and iterate on successful ideas, but this category is meant to reward the individuals who aren’t afraid to challenge convention in pursuit of new and revolutionary ideas. Submissions in this category should focus on a new way to use* (**visualize, analyze,** *etc) champion mastery data. We are always looking for ways to encourage developers to think outside of the box.*
+
+Because we're approaching the analysis and visualization of champion master data in a new way (aggregate vs. individual summoner analysis), we felt our entry was most approprate in this category.
 
 In this README, we'll go through:
 
-- How to run the application on your own (in various forms)
-- The overall structure of the GitHub repository
-- How the backend scripts work and the dependencies required to run them
-- How the visualizations work
-- How the site was built and the dependencies required to deploy it
+- How to run the application on your own (in various forms).
+- The overall structure of the GitHub repository.
+- How the backend scripts work and the dependencies required to run them.
+- How the visualizations work.
+- How the site was built and the dependencies required to deploy it.
+- How we will improve the metrics and design of the application.
 
-Champion Affinity was designed and created by [Chris](http://theisencr.github.io/) ([Ellipson (NA)](http://na.op.gg/summoner/userName=Ellipson)) and Rob ([T3lrec (NA)](http://na.op.gg/summoner/userName=t3lrec))
+Champion Affinity was designed and created by [Chris](http://theisencr.github.io/) ([Ellipson (NA)](http://na.op.gg/summoner/userName=Ellipson)) and Rob ([T3lrec (NA)](http://na.op.gg/summoner/userName=t3lrec)).
 
 Chris designed the metrics, did the development work, and wrote most of the words you're reading here and on the site itself.
 
 Rob acted as a sounding board for ideas (including many late nights in Discord/Hangouts), helped design the color scheme, wrote text content, and provided proofreading and feedback on the final application.
 
-##I Just Want To Run This Thing!
+##Running the Application
 
-Fair enough! Here's the step by step instructions for several use cases of the app. If you're confused about what some of these steps mean, refer farther down in the document. Otherwise, feel free to reach out to ask questions!
+Here's the step by step instructions for several use cases of the app. If you're confused about what some of these steps mean, refer farther down in the document. Otherwise, feel free to reach out to ask questions.
 
-For dependency installation, I highly recommend making use of [<code>pip</code>](http://python-packaging-user-guide.readthedocs.io/en/latest/installing/).
+There's a minimal amount of dependencies to run this application. If you just want to see the final product, navigate to our site (listed at the top of this page and throughout our document). If you want to run the backend scripts yourself, Python 3.X is required. Git is highly recommended to pull the repository off GitHub. Finally, we recommend using [pip](http://python-packaging-user-guide.readthedocs.io/en/latest/installing/) for Python dependency installation.
 
-####I just want to see the final product!
+####I just want to see the final product.
 
-Easy! We have a live version of the app up at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/). Go nuts!
+We have a live version of the app up at [http://champion-affinity.getforge.io/](http://champion-affinity.getforge.io/).
 
-####I want to deploy my own version (locally) with your dataset!
+####I want to deploy my own version (locally) with your dataset.
 
-Dependency: Python 3.X, git
+Dependencies: Python 3.X, git
 
 - Grab the codebase using <code>git clone https://github.com/theisencr/lol-mastery-analysis.git</code>
 - Navigate to the <code>web</code> directory on a command line.
 - Run the following command: <code>python -m http.server 8000</code>
 - Navigate to <code>localhost:8000</code> on your web browser of choice.
 
-####I want to deploy my own version (remotely) with your dataset!
+####I want to deploy my own version (remotely) with your dataset.
 
 We recommend deploying the site to [Forge](http://getforge.com), but any static site host will do. These instructions will be for Forge.
 
@@ -44,9 +68,9 @@ We recommend deploying the site to [Forge](http://getforge.com), but any static 
 - Follow the instructions for setting up your own site: choose the "deploy from .zip" option
 - Drag and drop (or select using a menu) <code>web.zip</code>.
 
-Your copy of Champion Affinity should be deployed at your chosen address!
+Your copy of Champion Affinity should be deployed at your chosen address.
 
-####I want to generate a new dataset and deploy!
+####I want to generate a new dataset and deploy.
 
 Dependency (required): Python 3.X, git
 
@@ -80,7 +104,7 @@ In this section, we'll discuss our metrics, how they're calculated, and how we w
 
 ####Champion Affinity
 
-Affinity (the namesake of our app) is the likelihood that having mastered (reached level 5 with) a champion predicts that you will have also played a different champion. As an example, if Garen has a 50% affinity with Annie but a 80% affinity with Lucian, that means that more Garen masters play Lucian than play Annie. If you like Garen, you should consider playing Lucian! 
+Affinity (the namesake of our app) is the likelihood that having mastered (reached level 5 with) a champion predicts that you will have also played a different champion. As an example, if Garen has a 50% affinity with Annie but a 80% affinity with Lucian, that means that more Garen masters play Lucian than play Annie. If you like Garen, you should consider playing Lucian. 
 
 To calculate the Affinity metric, we developed the following algorithm, presented in pseudocode.
 
@@ -145,18 +169,16 @@ for each champion in champion_affinity:
     centrality[champion] += champion_affinity[champion][champion_all]
  ```
     
-For each champion, we take the sum of all affinity values for the other 129 champions. For example, if we wanted the centrality measure for Aatrox, we would add up all of the affinity values for Aatrox to/from any other champion. The final theoretical values can range from 0-130; no normalization was required here, because we're displaying these values in a bar chart. More = better!
+For each champion, we take the sum of all affinity values for the other 129 champions. For example, if we wanted the centrality measure for Aatrox, we would add up all of the affinity values for Aatrox to/from any other champion. The final theoretical values can range from 0-130; no normalization was required here, because we're displaying these values in a bar chart. More = better.
 
 #####How would you improve champion centrality?
 
 Right now this metric is **very** closely correlated with champion clustering. This is more of an artifact of how clustering didn't quite work out how we expected, but separating these two concepts more would be a good next step.
 
 ####Champion Clustering
-We wanted to see if we could predict, based on champion mastery data, which champions are part of the "meta" at the Challenger/Master level. To do this, we used Markov Clustering (a Machine Learning technique) to identify the champions that were the most interconnected in our dataset.
+We wanted to see if we could predict, based on champion mastery data, which champions are part of the "meta" at the Challenger/Master level. To calculate the Clustering metric, we used Markov Clustering Algorithm (MCL). This algorithm helps you find "clusters" of nodes in graphs. We used this algorithm to identify what champions were considered "meta" by their interconnectivity. While this approach typically outputs a set of clusters of nodes, our dataset only produced one, which grew or shrank depending on how we "tuned" our parameters for MCL. Tuning your parameters when using machine learning algorithms is [incredibly important](https://github.com/timm/timm.github.io/blob/master/pdf/16tunelearners.pdf).
 
-To calculate the Clustering metric, we used Markov Clustering Algorithm (MCL). This algorithm helps you find "clusters" of nodes in graphs. We used this algorithm to identify what champions were considered "meta" by their interconnectivity. While this approach typically outputs a set of clusters of nodes, our dataset only produced one, which grew or shrank depending on how we "tuned" our parameters for MCL. Tuning your parameters when using machine learning algorithms is [incredibly important](https://github.com/timm/timm.github.io/blob/master/pdf/16tunelearners.pdf).
-
-Our original goal in using this clustering algorithm was to identify champions that were "like" one another. Unfortunately, no amount of tuning using random parameters or [Differential Evolution](https://en.wikipedia.org/wiki/Differential_evolution) to "improve" our result ever resulted in more than one distinct cluster of champions. We then realized that MCL was identifying the "center" of our graph, and our parameter tuning was simply growing or shrinking what was considered "center" and what wasn't. This could be the metagame at Challenger/Masters! We chose to iterate over parameters until we identified the most centralized 20% of champions, highlighted those nodes as red on our [force graph](http://champion-affinity.getforge.io/graph.html), and declared that to be the "learned" meta at the highest levels of play. Overall, we think it performs pretty well!
+Our original goal in using this clustering algorithm was to identify champions that were "like" one another. Unfortunately, no amount of tuning using random parameters or [Differential Evolution](https://en.wikipedia.org/wiki/Differential_evolution) to "improve" our result ever resulted in more than one distinct cluster of champions. We then realized that MCL was identifying the "center" of our graph, and our parameter tuning was simply growing or shrinking what was considered "center" and what wasn't. This could be the metagame at Challenger/Masters..? We chose to iterate over parameters until we identified the most centralized 20% of champions, highlighted those nodes as red on our [force graph](http://champion-affinity.getforge.io/graph.html), and declared that to be the "learned" meta at the highest levels of play.
 
 To implement this algorithm, we originally used [koteth's Python implementation](https://github.com/koteth/python_mcl) of MCL. However, this implementation was only working for Python 2.7.X. We [forked](https://github.com/theisencr/python_mcl) the project in order to upgrade the formatting to Python 3.X, so our project would only use one version of Python.
 
@@ -172,15 +194,15 @@ In this section, we'll go over the structure of the files in our repository.
 
 Root contains the following:
 
-- The <code>README</code> you're reading now!
-- The python scripts that makeup the backend
-- Our verification text file
-- The deployable <code>web.zip</code> file of our public-facing app
-- Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this application, you'll need to make your own.
+- The <code>README</code> you're reading now.
+- The python scripts that makeup the backend.
+- Our verification text file.
+- The deployable <code>web.zip</code> file of our public-facing app.
+- Notably missing: a file called <code>api_key</code> that contains a Riot API key. If you'd like to run this application, you'll need to make your own and place it at root.
 
 ####Data
 
-This folder contains the files that support the creation and evaluation of our metrics. The files on GitHub represent mastery data from Masters/Challenger players and metric calculations from April 25th, 2016. These files can be regenerated using the backend scripts at any time, though some differences should be expected in the final results.
+This folder contains the files that support the creation and evaluation of our metrics. The files on GitHub represent mastery data from Masters/Challenger players and metric calculations from April 25th, 2016. These files can be regenerated using the backend scripts at any time, though some differences should be expected in the final results. We also can't guarantee that the scripts will work once the next champion is added (until we get around to making the backend handle champion additions seamlessly).
 
 ####Static_Data
 
@@ -259,7 +281,7 @@ The test_ series of scripts are for running API tests. As mentioned before, we i
 
 Our naming scheme organization isn't ideal; moving each of the classes of scripts into their own folders and improving the naming of each file is the next thing to do. We could then generate a Python setup script that would run the entire supply chain and deliver the data files to the web deployment folder.
 
-**Long term:** We'd like to set up a database for storing our datasets. Classifying summoner_ID's by league alongside their mastery data and sucking in as much data as possible to a PostgreSQL or NoSQL database would allow us to analyze our metrics across multiple leagues and see how affinity links and the meta distribution changes as you move up and down the ladder. What's true for Challenger/Master may not be true in Silver (we're guessing they'll be *very* different). Running the backend on a dedicated server and delivering regular updates to the frontend would make a cool live site. We originally planned to set up a database for this project, but .csv's were easier for us to use for rapid experimentation.
+**Long term:** We'd like to set up a database for storing our datasets. Classifying summoner_ID's by league alongside their mastery data and sucking in as much data as possible to a PostgreSQL or NoSQL database would allow us to analyze our metrics across multiple leagues and see how affinity links and the meta distribution changes as you move up and down the ladder. What's true for Challenger/Master may not be true in Silver (we're guessing they'll be *very* different). Running the backend on a dedicated server and delivering regular updates to the frontend would make a cool live site. We originally planned to set up a database for this project, but .csv's were easier for us to use for rapid experimentation, and we ran out of time to implement the more elegant solution.
 
 ##Visualizations
 
@@ -302,16 +324,26 @@ First, let's set up the goals for the site:
 - It should load quickly and use as little bandwidth as possible
 - It should be easy for others to deploy themselves (replication!)
 
-With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on, instead of dynamically calculating the metrics on page load, per visitor. Future iterations of the site will also precalculate different leagues (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support; our visualizations cause some table breaking, and the pseudocode has some wordwrap issues on the About page, but the site is fully functional otherwise.
+With these goals in mind, we made two major design decisions. One, we decided to create static content to build our data visualizations on. Future iterations of the site will also precalculate different leagues on a regular schedule (think [champion.gg](http://www.champion.gg) style preprocessing). Second, we're using [Bootstrap](http://getbootstrap.com/) as the primary driver of our site, as it satisfies our need for a lightweight HTML/Javascript based static site. Bootstrap also has excellent mobile support; our visualizations cause some table breaking, and the pseudocode has some wordwrap issues on the About page, but the site is fully functional on your mobile device.
 
 Each visualization is stuck into a separate .html container for display on each page. This way, the page loads up nearly instantly even if the visualization takes a bit of time to calculate and display.
 
 We're using [Forge](http://www.getforge.com) as our hosting platform. Forge makes it really easy to publish static content sites, and has a generous free tier for those who would like to replicate our project.
 
-The color scheme is pretty basic. We didn't want a visually noisy site that would be hard to parse and understand on smaller screens. We didn't want a simple white background (hard on the eyes), but we needed something that would provide the same contrast as white for our visualizations. The brass/manilla color worked great for this; it's [f.lux-like](https://justgetflux.com/). 
+The color scheme is pretty basic. We didn't want a visually noisy site that would be hard to parse and understand on smaller screens. Additionally, one of our demo testers pointed out that an early background (a character splash screen) was making it hard for him to read the charts and graphs because of his color blindness. We didn't want a simple white background (hard on the eyes), but we needed something that would provide the same contrast as white for our visualizations. The brass/manilla color worked great for this; it's [f.lux-like](https://justgetflux.com/). We've specifically chosen our colors to be compatible with the types of [color blindness provided by NIH](https://nei.nih.gov/health/color_blindness/facts_about). While blue-yellow color blindness looks like it might be an issue, the percieved colors still allow for contrast on our site.
+
+####Site Improvements
+
+We have some pretty serious table breaking going on for smaller resolutions and mobile platforms. It doesn't cause functionality issues, as you can simply scroll and zoom to make the visualizations fit on the screen, but it is a concern. Allowing the visualizations to grow and shrink depending on the browser/resolution/etc. instead of fixed widths is the next logical step.
+
+A more visually interesting background and color scheme is a possibility; while we designed with accessibility in mind, having a "color-blind" version of the site might be one way to do more visually interesting components.
 
 ##FAQ
 
 ####Why'd you fork that MCL library?
 
 We were originally going to write up instructions on how to run both Python 2.7 and 3.5 on the same machine for replicating the backend, but decided we could give upgrading it to 3.5 ourselves a try! It turned out to be really straightforward. Hopefully others will find the upgrade useful as well!
+
+##Legal
+
+Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
