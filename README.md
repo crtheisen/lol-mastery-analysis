@@ -9,7 +9,8 @@ In this README, we'll go through:
 - How the backend scripts work and the dependencies required to run them.
 - How the visualizations work.
 - How the site was built and the dependencies required to deploy it.
-
+- How we will improve the metrics and design of the application.
+- 
 Champion Affinity was designed and created by [Chris](http://theisencr.github.io/) ([Ellipson (NA)](http://na.op.gg/summoner/userName=Ellipson)) and Rob ([T3lrec (NA)](http://na.op.gg/summoner/userName=t3lrec)).
 
 Chris designed the metrics, did the development work, and wrote most of the words you're reading here and on the site itself.
