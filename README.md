@@ -15,6 +15,7 @@
     - [Visualizations Next Steps](https://github.com/theisencr/lol-mastery-analysis#giving-backnext-steps)
   - [Site Design](https://github.com/theisencr/lol-mastery-analysis#site-design) 
     - [Site Improvements](https://github.com/theisencr/lol-mastery-analysis#site-improvements)
+  - [FAQ] (https://github.com/theisencr/lol-mastery-analysis#faq) 
 
 For [Riot's API Challenge (2016)](https://developer.riotgames.com/discussion/announcements/show/eoq3tZd1), we decided to explore how the mastery data provided by the Riot API can model the relationships between champions. For example, if a summoner enjoys playing Garen, how does that predict whether they would enjoy playing Annie? This sort of data could be useful to find new champions to expand your champion pool with, or for designers, identify champions that don't have an obvious progression to another champion. We've generated a few metrics to explore this idea, using an initial population of Masters/Challenger players. You can read more about how each metric is calculated below (or on the site's [about](http://champion-affinity.getforge.io/about) page).
 
@@ -336,3 +337,7 @@ A more visually interesting background and color scheme is a possibility; while 
 ####Why'd you fork that MCL library?
 
 We were originally going to write up instructions on how to run both Python 2.7 and 3.5 on the same machine for replicating the backend, but decided we could give upgrading it to 3.5 ourselves a try! It turned out to be really straightforward. Hopefully others will find the upgrade useful as well!
+
+##Legal
+
+Champion Affinity isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
