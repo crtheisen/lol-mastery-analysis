@@ -1,6 +1,6 @@
 # Champion Affinity ([live site](http://champion-affinity.getforge.io/))
 
-- [I Just Want To Run This Thing](https://github.com/theisencr/lol-mastery-analysis#running-the-application)
+- [Running the Application](https://github.com/theisencr/lol-mastery-analysis#running-the-application)
 - [Metrics](https://github.com/theisencr/lol-mastery-analysis#metrics)
   - [Champion Affinity](https://github.com/theisencr/lol-mastery-analysis#champion-affinity)
     - [Affinity Improvements](https://github.com/theisencr/lol-mastery-analysis#how-would-you-improve-champion-affinity)
